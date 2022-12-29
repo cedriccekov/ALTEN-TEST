@@ -1,7 +1,7 @@
 # ALTEN-TEST
 
-Java 8
-Spring Boot 2.7.7
+Java 8 -
+Spring Boot 2.7.7 - 
 Memory Database H2
 
 
