@@ -49,11 +49,15 @@ public class ReservationServiceImpl implements ReservationService {
         Chambre ch=chbre.check();
         Reservation reservSuccess=null;
         Date today=new Date();
+
         boolean checkin=false;
 
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
 
         Date dateEntree= sdf.parse(c.getDate_entree());
+             // format today date without time
+        String todayStr=sdf.format(today);
+        Date dayStr=sdf.parse(todayStr);
 
         Date dateSortie=Util.calculdateSortie(dateEntree,c.getNbre().intValue());
 
@@ -61,8 +65,11 @@ public class ReservationServiceImpl implements ReservationService {
 
         System.out.println("date sortie" + sdf.format(dateSortie));
         System.out.println("jour " + jour);
+        System.out.println("jour " + dayStr);
 
-             if(dateEntree.before(today)){
+
+
+             if(dateEntree.before(dayStr)){
                   throw new ReservationException();
 
              }  else{
@@ -109,7 +116,7 @@ public class ReservationServiceImpl implements ReservationService {
                   if(dateEntree.equals(today)) {checkin=true;}
                   if (dateEntree.before(bookDateEntree) && (dateSortie.after(bookDateEntree) || dateSortie.equals(bookDateEntree))) {checkin=true;}
                   if (dateEntree.after(bookDateEntree) &&
-                          (dateSortie.before(bookDateSortie) ||  (dateSortie.equals(bookDateSortie) || dateSortie.after(bookDateSortie) ) ) ) {checkin=true;}
+                          (dateSortie.before(bookDateSortie) ||  (dateSortie.equals(bookDateSortie)  ) ) ) {checkin=true;}
 
 
 
@@ -284,7 +291,8 @@ public class ReservationServiceImpl implements ReservationService {
         Date dateEntree= sdf.parse(re.getDate_entree());
 
                                       if (re!=null){
-                                               if(today.before(dateEntree)){
+                                              // if(today.before(dateEntree)){
+                                                   if(re.getCodeStatut().getLibelle().equalsIgnoreCase("COMING")){
 
                                                    this.reserv.deleteById(id);
                                                    List<Reservation> bookingNext=this.reserv.bookingFuture();
