@@ -4,7 +4,7 @@ Java 8 -
 Spring Boot 2.7.7 - 
 Memory Database H2
 
-
+ Database H2 URL : http://localhost:6060/h2-console
 
      - Vérifier la disponibilité de la chambre
      
