@@ -42,8 +42,7 @@ public class ReservationServiceImpl implements ReservationService {
     public ResponseEntity<Object>  createReservation(Reservation c) throws Exception {
 
 
-/*
-        if(c.getNbre().intValue()>3)
+        /*if(c.getNbre().intValue()>3)
         {
             throw new NombreSejourException();
         }*/

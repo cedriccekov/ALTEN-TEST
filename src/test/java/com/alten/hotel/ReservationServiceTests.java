@@ -12,6 +12,7 @@ import com.alten.hotel.repositories.StatutRepository;
 import com.alten.hotel.service.ReservationService;
 import com.alten.hotel.serviceImpl.ReservationServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
@@ -54,7 +55,7 @@ public class ReservationServiceTests {
        serv.setCodeStatut(st);
 
     }
-
+    @DisplayName("Verifier si nombre de jours est superieur à 3")
     @Test
     void nombreSejourException(){
         System.out.println(res);
