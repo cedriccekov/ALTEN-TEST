@@ -42,7 +42,7 @@ public class MyRunner implements CommandLineRunner {
         s.save(new Statut("COMING"));
         c.save(new Chambre("MAT23","suite"));
 
-        Reservation serv=new Reservation();
+       /* Reservation serv=new Reservation();
         serv.setNbre(2);
         serv.setNom("Louis");
         serv.setTel(91952354);
@@ -53,7 +53,7 @@ public class MyRunner implements CommandLineRunner {
         r.save(serv);
         Chambre ch=c.findById("MAT23").get();
                ch.setAvailable(Boolean.FALSE);
-               c.save(ch);
+               c.save(ch);*/
 
 
 
