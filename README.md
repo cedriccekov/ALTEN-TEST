@@ -2,7 +2,7 @@
 
 # ALTEN-TEST
 
-![Fancy logo](./light.png#gh-light-mode-only)
+
 
 Java 8 -
 Spring Boot 2.7.7 - 
